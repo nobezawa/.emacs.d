@@ -1,0 +1,128 @@
+cd ..
+cd ..
+rake db:migrate
+cd ..
+cd .
+cd ..
+ls
+cd ..
+ls
+bundle install
+exit
+cd .
+cd ..
+cd ..
+ls
+git status
+git add .
+git commit -a -m "permalink作成"
+git push
+exit
+cd ..
+cd ..
+ls
+cd log
+tail development.log
+tail -20 development.log
+tail -20 development.log
+ls
+tail development.log 
+tail development.log 
+tail -100 development.log
+exit
+ruby exec.rb 
+exit
+ruby exec.rb 
+ruby exec.rb 
+ruby -g migration AddColumnImage
+ruby g migration AddColumnImage
+rails g migration AddColumnImage
+exit
+cd ..
+ls
+ruby exec.rb 
+cd ../..
+rails s -p3000 -d
+exit
+cd ..
+cd ..
+git commit -am "android_controller 修正"
+git push
+git pull
+git push
+exit
+cd ../..
+git status
+git commit -am "ドメイン指定"
+git push
+exit
+service apache2 restart
+exit
+ll
+ls
+cd ..
+ls
+cd sites-enabled/
+ls
+ls -s /etc/httpd/sites-available/politics /etc/httpd/sites-enabled/001-politics
+exit
+sudo service apache2 restart
+exit
+sudo service apache2 reload 
+exit
+cd
+cd .rbenv/versions/1.9.3-p429/lib/ruby/gems/1.9.1/gems/passenger-4.0.5/libout/apache2/
+ls
+cd ../..
+cd
+ls
+cd .rbenv/versions/1.9.3-p429/bin/
+ls
+cd
+ls
+exit
+sudo service apache2 reload 
+exit
+sudo service apache2 reload 
+exit
+sudo service apache2 reload 
+exit
+sudo service apache2 reload 
+sudo service apache2 reload 
+sudo service apache2 reload 
+exit
+sudo service apache2 reload 
+exit
+sudo service apache2 reload 
+exit
+sudo service apache2 reload 
+exit
+sudo service apache2 reload 
+sudo service apache2 reload 
+sudo service apache2 reload 
+sudo service apache2 reload 
+exit
+sudo service apache2 reload 
+exit
+sudo service apache2 reload 
+exit
+sudo service apache2 reload 
+exit
+sudo service apache2 reload 
+exit
+sudo service apache2 reload 
+exit
+nslookup nobezawa.info
+nslookup politics.nobezawa.info
+nslookup politics.nobezawa.info
+exit
+ls
+suod cp politics kokkai-tushinbo
+sudo cp politics kokkai-tushinbo
+ls
+ll /var/www/public_html/
+ls /var/www/public_html/
+exit
+mysql -u design_sns -p design_db_server
+mysql -u design_db_server -p design_sns
+exit
