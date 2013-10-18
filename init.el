@@ -31,6 +31,9 @@
 (define-key global-map "\C-z" 'undo)                 ;undo
 (define-key global-map "\C-ci" 'indent-region)       ;インデント
 
+;自動インデント
+(global-set-key "\C-m" 'newline-and-indent)
+
 ;行番号の表示
 (global-linum-mode t)
 ;一行が80文字以上になったら、自動改行する
@@ -97,7 +100,7 @@
             (make-local-variable 'tab-width)
             (make-local-variable 'indent-tabs-mode)
             (setq tab-width 4)
-            (setq indent-tabs-mode nil)))
+            (setq indent-tabs-mode nil))) ;indentにtabは使わない
 
 
 ;; ruby-block
@@ -112,8 +115,6 @@
 
 (setq ruby-indent-level 2)
 (setq ruby-indent-tabs-mode nil)
-
-(add-hook 'magit-mode-hook 'magit-setup-diff)
 (setq ruby-deep-indent-paren-style nil)
 
 (defadvice ruby-indent-line (after unindent-closing-paren activate)
@@ -141,3 +142,4 @@
 ;; Magit
 
 (require 'magit)
+(add-hook 'magit-mode-hook 'magit-setup-diff)
