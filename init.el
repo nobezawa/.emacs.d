@@ -141,5 +141,5 @@
 
 ;; Magit
 
-(require 'magit)
-(add-hook 'magit-mode-hook 'magit-setup-diff)
+;;(require 'magit)
+;;(add-hook 'magit-mode-hook 'magit-setup-diff)
