@@ -31,6 +31,13 @@
 (define-key global-map "\C-z" 'undo)                 ;undo
 (define-key global-map "\C-ci" 'indent-region)       ;インデント
 
+;file名の補完で大文字、小文字区別しない
+(setq completion-ignore-case t)
+
+;同名ファイルのバッファ名の識別文字列を変更する
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+
 ;自動インデント
 (global-set-key "\C-m" 'newline-and-indent)
 
@@ -40,6 +47,8 @@
 (setq fill-column 80)
 (setq-default auto-fill-mode t)
 
+;タブを使わない
+(setq indent-tabs-mode nil)
 
 ;バックアップファイルを作らない
 (setq make-backup-files nil)
@@ -137,7 +146,14 @@
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.\\(js\\|json\\)$" . js2-mode))
 
-
+;;set eshell aliases
+(setq eshell-command-aliases-list
+            (append
+	            (list
+		             (list "ll" "ls -alF")
+			       (list "dev" "rails s -p3000 -e development")
+			             (list "swipl" "/opt/local/bin/swipl"))
+		           eshell-command-aliases-list))
 
 ;; Magit
 
