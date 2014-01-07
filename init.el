@@ -159,3 +159,13 @@
 
 ;;(require 'magit)
 ;;(add-hook 'magit-mode-hook 'magit-setup-diff)
+
+
+;;expand region
+(add-to-list 'load-path "~/.emacs.d/expand-region.el")
+(require 'expand-region)
+(global-set-key (kbd "C-@") 'er/expand-region) 
+(global-set-key (kbd "C-M-@") 'er/contract-region)
+
+;; transient-mark-modeが nilでは動作しませんので注意
+(transient-mark-mode t)
