@@ -169,3 +169,10 @@
 
 ;; transient-mark-modeが nilでは動作しませんので注意
 (transient-mark-mode t)
+
+
+;; multiple-cursors
+(add-to-list 'load-path "~/.emacs.d/multiple-cursors.el")
+(require 'multiple-cursors)
+(global-set-key (kbd "C-q") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
