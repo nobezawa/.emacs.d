@@ -26,6 +26,10 @@
 (define-key zencoding-mode-keymap (kbd "C-c C-m") 'zencoding-expand-line)
 (define-key zencoding-preview-keymap (kbd "C-c C-m") 'zencoding-preview-accept)
 
+; 矩形選択
+(cua-mode t)
+(setq cua-enable-cua-keys nil) ;; 変なキーバインド禁止
+
 ;キーバインド
 (define-key global-map "\C-h" 'delete-backward-char) ;削除
 (define-key global-map "\C-z" 'undo)                 ;undo
@@ -175,3 +179,5 @@
 (require 'multiple-cursors)
 (global-set-key (kbd "C-d") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+
+
