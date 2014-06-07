@@ -5,6 +5,12 @@
         (expand-file-name "~/.emacs.d/elisp/"))
        load-path))
 
+;; リポジトリ登録
+(require 'package)
+;; MELPAを追加
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+;; 初期化
+(package-initialize)
 
 ;; encoding
 
@@ -189,3 +195,6 @@
   '(progn
      (define-key coffee-mode-map [(meta r)] 'coffee-compile-buffer)
      (define-key coffee-mode-map (kbd "C-j") 'coffee-newline-and-indent)))
+
+;; flycheck
+(add-hook 'after-init-hook #'global-flycheck-mode)
