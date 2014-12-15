@@ -12,6 +12,7 @@
 ;; 初期化
 (package-initialize)
 
+
 ;; encoding
 
 (set-language-environment       "Japanese")
@@ -121,6 +122,16 @@
             (setq tab-width 4)
             (setq indent-tabs-mode nil))) ;indentにtabは使わない
 
+;; smarty-mode
+(autoload 'smarty-mode "smarty-mode")
+(setq auto-mode-alist
+      (cons '("\\.tpl\\'" . smarty-mode) auto-mode-alist))
+(add-hook 'smarty-mode-hook
+           #'(lambda ()
+              (make-local-variable 'tab-width)
+              (make-local-variable 'indent-tabs-mode)
+              (setq indent-tabs-mode nill)
+              (setq tab-width 4)))
 
 ;; ruby-block
 (require 'ruby-block)
@@ -158,12 +169,12 @@
 
 ;;set eshell aliases
 (setq eshell-command-aliases-list
-            (append
-	            (list
-		             (list "ll" "ls -alF")
-			       (list "dev" "rails s -p3000 -e development")
-			             (list "swipl" "/opt/local/bin/swipl"))
-		           eshell-command-aliases-list))
+      (append
+       (list
+	(list "ll" "ls -alF")
+	(list "dev" "rails s -p3000 -e development")
+	(list "swipl" "/opt/local/bin/swipl"))
+       eshell-command-aliases-list))
 
 ;; Magit
 
@@ -196,5 +207,17 @@
      (define-key coffee-mode-map [(meta r)] 'coffee-compile-buffer)
      (define-key coffee-mode-map (kbd "C-j") 'coffee-newline-and-indent)))
 
+
+
+;; quickrun
+(require 'quickrun)
+
 ;; flycheck
+
 (add-hook 'after-init-hook #'global-flycheck-mode)
+
+; ag
+(setq default-process-coding-system 'utf-8-unix)  ; ag 検索結果のエンコード指定
+(require 'ag)
+(setq ag-highlight-search t)  ; 検索キーワードをハイライト
+(setq ag-reuse-buffers t)  
