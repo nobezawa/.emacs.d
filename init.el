@@ -43,6 +43,7 @@
 (define-key global-map "\C-ci" 'indent-region)       ;インデント
 (define-key global-map "\C-u" 'forward-word)         ;単語forward
 (define-key global-map "\C-i" 'backward-word)        ;単語backword
+(define-key global-map "\C-l" 'kill-word)            ;kill word
 
 ;file名の補完で大文字、小文字区別しない
 (setq completion-ignore-case t)
