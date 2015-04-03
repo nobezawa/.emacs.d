@@ -99,6 +99,12 @@
 (require 'anything-config)
 (add-to-list 'anything-sources 'anything-c-source-emacs-commands)
 
+;; multiple-cursors
+(add-to-list 'load-path "~/.emacs.d/multiple-cursors.el")
+(require 'multiple-cursors)
+(global-set-key (kbd "C-d") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+
 ;; php-mode
 (require 'php-mode)
  
@@ -107,6 +113,8 @@
 
 (add-hook 'php-mode-hook
           (lambda ()
+            (local-set-key (kbd "C-d") 'mc/mark-next-like-this)
+            (local-set-key (kbd "C-<") 'mc/mark-previous-like-this)
             (defun ywb-php-lineup-arglist-intro (langelem)
               (save-excursion
                 (goto-char (cdr langelem))
@@ -193,12 +201,6 @@
 
 ;; transient-mark-modeが nilでは動作しませんので注意
 (transient-mark-mode t)
-
-;; multiple-cursors
-(add-to-list 'load-path "~/.emacs.d/multiple-cursors.el")
-(require 'multiple-cursors)
-(global-set-key (kbd "C-d") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 
 ;; coffeescript
 (custom-set-variables
