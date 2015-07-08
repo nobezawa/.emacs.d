@@ -226,3 +226,12 @@
 (require 'ag)
 (setq ag-highlight-search t)  ; 検索キーワードをハイライト
 (setq ag-reuse-buffers t)  
+
+;PHP modeの際に改行の表示をさせる
+(autoload 'whitespace-mode "whitespace" "Toggle whitespace visualization." nil t)
+(add-hook 'php-mode-hook
+   '(lambda ()
+     (whitespace-newline-mode)))
+(setq whitespace-display-mappings
+   '((newline-mark ?\n    [?\x2193 ?\n] [?$ ?\n]); end-of-line
+))
